@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">NoteApp</string>
+    <string name="do_homework">Сделать ДЗ</string>
+    <string name="do_homework_desc">Сделать домашнее задание по программированию</string>
+    <string name="do_homework_date">02.12.2021</string>
+    <string name="go_gym">Сходить в зал</string>
+    <string name="go_gym_desc">Позаниматься в спортзале 8 подходов...</string>
+    <string name="go_gym_date">03.12.2021</string>
+    <string name="buy_food">Купить продукты</string>
+    <string name="buy_food_desc">Купить продукты: хлеб, яйца, огурцы и т.д.</string>
+    <string name="buy_food_date">04.12.2021</string>
 </resources>

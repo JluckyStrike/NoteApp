@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/notes_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/title_size_text">
+    </TextView>
+
+    <TextView
+        android:id="@+id/notes_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginVertical="@dimen/margin_small"
+        android:layout_marginHorizontal="@dimen/margin_small"
+        android:textSize="@dimen/desc_size_text">
+    </TextView>
+
+    <TextView
+        android:id="@+id/notes_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginVertical="@dimen/margin_small"
+        android:layout_marginHorizontal="@dimen/margin_small"
+        android:textSize="@dimen/date_size_text">
+    </TextView>
+
+</LinearLayout>
