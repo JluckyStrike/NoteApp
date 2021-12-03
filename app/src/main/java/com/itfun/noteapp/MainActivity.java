@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentResultListener;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
 
 import com.itfun.noteapp.detail.NoteDetailsActivity;
 import com.itfun.noteapp.detail.NoteDetailsFragment;
@@ -43,6 +44,26 @@ public class MainActivity extends AppCompatActivity  {
                     intent.putExtra(NoteDetailsActivity.EXTRA_NOTE, selectedNote);
                     startActivity(intent);
                 }
+            }
+        });
+
+        findViewById(R.id.about_apps).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new AboutAppFragment())
+                        .commit();
+            }
+        });
+
+        findViewById(R.id.list_notes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new NotesListFragment())
+                        .commit();
             }
         });
     }
