@@ -14,4 +14,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="info_about_app">Информация о приложении...</string>
     <string name="list_notes">Список заметок</string>
+    <string name="search">Поиск</string>
+    <string name="add">Добавить</string>
+    <string name="share">Поделиться</string>
+    <string name="options_app">Настройки приложения</string>
+    <string name="nav_app_open">OpenNav</string>
+    <string name="nav_app_close">CloseNav</string>
 </resources>
