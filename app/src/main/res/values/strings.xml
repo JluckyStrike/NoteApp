@@ -20,4 +20,10 @@
     <string name="options_app">Настройки приложения</string>
     <string name="nav_app_open">OpenNav</string>
     <string name="nav_app_close">CloseNav</string>
+    <string name="close_apps">выйти</string>
+    <string name="quit_app">Выход из приложения</string>
+    <string name="str_yes">Да</string>
+    <string name="welcome_back">С возвращением</string>
+    <string name="already_quit">Уже уходите :(</string>
+    <string name="str_no">Нет</string>
 </resources>
