@@ -12,6 +12,14 @@
         android:textSize="@dimen/title_size_text">
     </TextView>
 
+    <ImageView
+        android:id="@+id/note_image"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_default"
+         />
+
     <TextView
         android:id="@+id/notes_desc"
         android:layout_width="match_parent"

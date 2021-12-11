@@ -3,6 +3,7 @@ package com.itfun.noteapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 
 public class Note implements Parcelable {
@@ -11,19 +12,25 @@ public class Note implements Parcelable {
     @StringRes
     private int description;
     @StringRes
-    private int date;
+    private final int date;
+    @DrawableRes
+    private final int image;
 
 
-    public Note(int title, int description, int date) {
+    public Note(int title, int description, int date, int image) {
         this.title = title;
         this.description = description;
         this.date = date;
+        this.image = image;
     }
+
+
 
     protected Note(Parcel in) {
         title = in.readInt();
         description = in.readInt();
         date = in.readInt();
+        image = in.readInt();
     }
 
     public static final Creator<Note> CREATOR = new Creator<Note>() {
@@ -50,6 +57,11 @@ public class Note implements Parcelable {
         return date;
     }
 
+    public int getImage() {
+        return image;
+    }
+
+
     @Override
     public int describeContents() {
         return 0;
@@ -60,5 +72,6 @@ public class Note implements Parcelable {
         parcel.writeInt(title);
         parcel.writeInt(description);
         parcel.writeInt(date);
+        parcel.writeInt(image);
     }
 }

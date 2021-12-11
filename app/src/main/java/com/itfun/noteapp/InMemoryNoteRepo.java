@@ -9,9 +9,9 @@ public class InMemoryNoteRepo implements NotesRepository{
     public List<Note> getAllNotes() {
         ArrayList<Note> noteArrayList = new ArrayList<>();
 
-        noteArrayList.add(new Note(R.string.do_homework, R.string.do_homework_desc, R.string.do_homework_date));
-        noteArrayList.add(new Note(R.string.go_gym, R.string.go_gym_desc, R.string.go_gym_date));
-        noteArrayList.add(new Note(R.string.buy_food, R.string.buy_food_desc, R.string.buy_food_date));
+        noteArrayList.add(new Note(R.string.do_homework, R.string.do_homework_desc, R.string.do_homework_date, R.drawable.work));
+        noteArrayList.add(new Note(R.string.go_gym, R.string.go_gym_desc, R.string.go_gym_date, R.drawable.gym));
+        noteArrayList.add(new Note(R.string.buy_food, R.string.buy_food_desc, R.string.buy_food_date, R.drawable.food));
 
         return noteArrayList;
     }
