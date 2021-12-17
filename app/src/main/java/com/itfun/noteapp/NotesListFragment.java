@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.itfun.noteapp.detail.NoteDetailsActivity;
 
@@ -22,7 +24,8 @@ public class NotesListFragment extends Fragment implements NotesListView{
     public static final String ARG_NOTE = "ARG_NOTE";
     public static final String RESULT_KEY = "NotesListFragment_RESULT";
 
-    private LinearLayout notesContainer;
+    private RecyclerView notesContainer;
+    private NotesAdapter adapter;
     private NotesListPresenter notesListPresenter;
 
 
@@ -31,6 +34,17 @@ public class NotesListFragment extends Fragment implements NotesListView{
         super.onCreate(savedInstanceState);
 
         notesListPresenter = new NotesListPresenter(this, new InMemoryNoteRepo());
+        adapter = new NotesAdapter();
+        adapter.setOnClick(new NotesAdapter.OnClick() {
+            @Override
+            public void onClick(Note note) {
+                Bundle data = new Bundle();
+                data.putParcelable(ARG_NOTE, note);
+
+                getParentFragmentManager()
+                        .setFragmentResult(RESULT_KEY, data);
+            }
+        });
     }
 
     @Nullable
@@ -44,12 +58,15 @@ public class NotesListFragment extends Fragment implements NotesListView{
         super.onViewCreated(view, savedInstanceState);
 
         notesContainer = view.findViewById(R.id.notes_container);
+        notesContainer.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false));
+        notesContainer.setAdapter(adapter);
+
         notesListPresenter.refresh();
     }
 
     @Override
     public void showNotes(List<Note> noteList) {
-        for (Note note : noteList) {
+        /*for (Note note : noteList) {
 
             View itemView = LayoutInflater.from(requireContext()).inflate(R.layout.item_notes, notesContainer, false);
 
@@ -67,7 +84,10 @@ public class NotesListFragment extends Fragment implements NotesListView{
             TextView cityTitle = itemView.findViewById(R.id.note_title);
             cityTitle.setText(note.getTitle());
 
-            notesContainer.addView(itemView);
-        }
+            notesContainer.addView(itemView);*/
+            adapter.setData(noteList);
+            adapter.notifyDataSetChanged();
+
     }
+
 }
